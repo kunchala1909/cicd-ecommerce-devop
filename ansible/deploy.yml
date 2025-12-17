@@ -1,0 +1,15 @@
+- hosts: web
+  become: yes
+  tasks:
+    - name: Install Docker
+      yum:
+        name: docker
+        state: present
+
+    - name: Start Docker
+      service:
+        name: docker
+        state: started
+
+    - name: Run Application Container
+      command: docker run -d -p 8080:8080 ecommerce-app
