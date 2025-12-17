@@ -1,0 +1,2 @@
+[web]
+ec2-public-ip ansible_user=ec2-user
